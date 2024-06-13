@@ -96,9 +96,9 @@ export default function HomePage() {
 
                             }}
                         >
-                            http://localhost:3000/{shortendUrl}
+                            https://shrnk.vercel.app/{shortendUrl}
                         </p>
-                        <button style={{ padding: '10px', marginLeft: '10px', borderRadius: '5px', border: '1px solid #ccc', backgroundColor: 'blue', color: 'white' }}
+                        <button style={{ padding: '10px', marginLeft: '10px', borderRadius: '5px', border: '1px solid #ccc', backgroundColor: 'blue', color: 'white',cursor:'pointer' }}
                             onClick={copyToClipboard}
                         >Copy</button>
                     </div>
