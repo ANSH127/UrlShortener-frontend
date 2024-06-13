@@ -11,6 +11,7 @@ export default function HomePage() {
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(`https://shrnk.vercel.app/${shortendUrl}`);
+        alert('Copied to clipboard');
     }
 
     const shortenUrl = async () => {
