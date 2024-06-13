@@ -68,7 +68,7 @@ export default function HomePage() {
 
             </h1>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <input type="url" placeholder="Enter URL" style={{ padding: '10px', width: '300px', borderRadius: '5px', border: '1px solid #ccc' }}
+                <input type="url" placeholder="Enter URL" style={{ padding: '15px', width: '300px', borderRadius: '5px', border: '1px solid #ccc' }}
 
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
