@@ -28,7 +28,15 @@ export default function RedirectPage() {
         }
     }
 
-    redirect();
+
+    if (id.length === 7) {
+
+        redirect();
+    }
+    else {
+        setIs404(true);
+    }
+
 
     return (
         <div
