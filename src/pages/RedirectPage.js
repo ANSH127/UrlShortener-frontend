@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams ,useNavigate} from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function RedirectPage() {
     const { id } = useParams();
@@ -37,7 +37,9 @@ export default function RedirectPage() {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100vh",
-                flexDirection: "column"
+                flexDirection: "column",
+                backgroundColor: '#0f172a',
+                color: 'white'
             }}
         >
             {is404 ? <h1>404 Not Found</h1> : <h1>Redirecting...</h1>}

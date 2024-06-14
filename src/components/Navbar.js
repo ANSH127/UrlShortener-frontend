@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{backgroundColor:'white',color:'black',
+      <AppBar position="static" sx={{backgroundColor:'#0f172a',color:'white',
       boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 1px rgba(0, 0, 0, 0.05)',
         
         }}>

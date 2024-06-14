@@ -4,6 +4,7 @@ import isUrl from 'is-url';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 
 export default function HomePage() {
 
@@ -48,6 +49,8 @@ export default function HomePage() {
             const data = await res.json();
             // console.log(data);
             setShortendUrl(data.url);
+            toast.warning('Shortened URL is valid for 3 days only');
+
 
         } catch (error) {
 
@@ -57,7 +60,6 @@ export default function HomePage() {
         }
         finally {
             setLoading(false);
-            toast.warning('Shortened URL is valid for 3 days only');
         }
     }
 
@@ -67,10 +69,14 @@ export default function HomePage() {
             display: 'flex',
             justifyContent: 'center', alignItems: 'center', height: '90vh',
             flexDirection: 'column',
+            backgroundColor: '#0f172a',
+            color:'white',
          
         }}>
-            <img src="./images/img.jpg" alt="img" style={{ width: 250, height: 250 }} />
-
+            <img src="./images/img2.png" alt="img" style={{ width: 'auto', height: 250 }} />
+            <h4  style={{height:'2px'}}>
+            Tired of big URLs ?
+            </h4>
             <h1>
                 Make Your <span style={{
                     color: 'blue'
@@ -79,16 +85,14 @@ export default function HomePage() {
 
             </h1>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <input type="url" placeholder="Enter URL" style={{ padding: '15px', width: '300px', borderRadius: '5px', border: '1px solid #ccc' }}
+                <input type="url" placeholder="Enter URL" style={{ padding: '15px', width: '300px', borderRadius: '10px', border: '1px solid #ccc',backgroundColor:'black',color:'white' }}
 
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
+
                 />
-                {
-                    !loading &&
-                    <button style={{ padding: '10px', marginLeft: '10px', borderRadius: '5px', border: '1px solid #ccc', backgroundColor: 'blue', color: 'white' }}
-                        onClick={shortenUrl}
-                    >Shorten</button>}
+                
+                <ArrowCircleRightOutlinedIcon fontSize='large' style={{ cursor: 'pointer', marginLeft: '5px' }} onClick={shortenUrl} />
             </div>
             {
                 loading && <Loadar />
@@ -98,13 +102,15 @@ export default function HomePage() {
                 shortendUrl && !loading &&
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
 
-                    <h3>Shortened URL</h3>
+                    <h3
+                    style={{height:'2px'}}
+                    >Shortened URL</h3>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <p
                             style={{
-                                padding: '10px', width: '280px', borderRadius: '15px', border: '1px solid #ccc',
+                                padding: '10px', width: '280px', borderRadius: '10px', border: '1px solid #ccc',
                                 wordBreak: 'break-all',
-                                backgroundColor: '#f9f9f9',
+                                backgroundColor: 'black',
 
                             }}
                         >
@@ -114,7 +120,7 @@ export default function HomePage() {
                                 }}
                             >https://shrnk.vercel.app/{shortendUrl}</span>
 
-                            <ContentCopyOutlinedIcon style={{ cursor: 'pointer', marginLeft: '5px', marginBottom: '-5px' }} onClick={copyToClipboard} />
+                            <ContentCopyOutlinedIcon style={{ cursor: 'pointer', marginLeft: '5px', marginBottom: '-5px' }}  onClick={copyToClipboard} />
                         </p>
                     </div>
 
