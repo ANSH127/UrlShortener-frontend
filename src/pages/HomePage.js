@@ -57,6 +57,7 @@ export default function HomePage() {
         }
         finally {
             setLoading(false);
+            toast.warning('Shortened URL is valid for 3 days only');
         }
     }
 
