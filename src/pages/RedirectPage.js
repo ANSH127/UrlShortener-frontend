@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 
 export default function RedirectPage() {
@@ -29,13 +29,19 @@ export default function RedirectPage() {
     }
 
 
-    if (id.length === 7) {
+    useEffect(() => {
+        if (id.length === 7) {
 
-        redirect();
-    }
-    else {
-        setIs404(true);
-    }
+            redirect();
+        }
+        else {
+            setIs404(true);
+        }
+
+        // eslint-disable-next-line
+    }, [])
+
+
 
 
     return (
