@@ -8,7 +8,10 @@ import Button from '@mui/material/Button';
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{backgroundColor:'white',color:'black'}}>
+      <AppBar position="static" sx={{backgroundColor:'white',color:'black',
+      boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 1px rgba(0, 0, 0, 0.05)',
+        
+        }}>
         <Toolbar>
             <img src="./images/chain.png" alt="logo" style={{width: 25, height: 25,paddingRight:'10px'}} />
           
